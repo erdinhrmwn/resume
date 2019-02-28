@@ -239,7 +239,8 @@ input.input100 {
 .s1-txt3 {
   font-family: Montserrat-Regular;
   font-size: 12px;
-  color: #cccccc;
+  color: #fff;
+  text-shadow: 0px 0px 4px #000000;
   line-height: 1.4;
 }
 
@@ -281,6 +282,7 @@ input.input100 {
   font-family: Montserrat-Black;
   font-size: 50px;
   color: #fff;
+  text-shadow: 0px 0px 4px #000000;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -289,6 +291,7 @@ input.input100 {
   font-family: Montserrat-Light;
   font-size: 30px;
   color: #fff;
+  text-shadow: 0px 0px 4px #000000;
   line-height: 1.2;
 }
 
@@ -351,7 +354,7 @@ input.input100 {
 /*//////////////////////////////////////////////////////////////////
 [ Background ]*/
 .bg0 {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 /*---------------------------------------------*/
@@ -361,21 +364,21 @@ input.input100 {
     background-position: center center;
     height: 100%;
     width: 100%;
-  /*background: #7918f2;
-  background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
-  background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
-  background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
-  background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);*/
+    /*background: #7918f2;
+    background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+    background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+    background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+    background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);*/
 }
 
 .bg-g2 {
     background: linear-gradient(-45deg, #F4511E, #FB8C00, #FFB300, #FDD835, #C0CA33, #7CB342, #43A047, #00897B, #00ACC1, #039BE5, #1E88E5, #3949AB, #5E35B1, #8E24AA, #D81B60, #E53935);
     background-size: 1200% 1200%;
     
-    -webkit-animation: bg-g2 90s ease infinite;
-    -moz-animation: bg-g2 90s ease infinite;
-    -o-animation: bg-g2 90s ease infinite;
-    animation: bg-g2 90s ease infinite;
+    -webkit-animation: bg-g2 90s linear infinite;
+    -moz-animation: bg-g2 90s linear infinite;
+    -o-animation: bg-g2 90s linear infinite;
+    animation: bg-g2 90s linear infinite;
 }
 
 @-webkit-keyframes bg-g2 {
@@ -400,17 +403,45 @@ input.input100 {
 }
 
 .bg-g3 {
-  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/stardust.png");
-  height: 100%;
-  animation: slide 60s linear infinite;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    -webkit-animation: bg-g3 60s linear infinite;
+    -moz-animation: bg-g3 60s linear infinite;
+    -o-animation: bg-g3 60s linear infinite;
+    animation: bg-g3 60s linear infinite;
 }
 
-@keyframes slide{
+@-webkit-keyframes bg-g3{
   0%{
     background-position: 0, 0);
   }
   100%{
-    background-position: -1692px, 0;
+    background-position: -1500px, 0;
+  }
+}
+@-moz-keyframes bg-g3{
+  0%{
+    background-position: 0, 0);
+  }
+  100%{
+    background-position: -1500px, 0;
+  }
+}
+@-o-keyframes bg-g3{
+  0%{
+    background-position: 0, 0);
+  }
+  100%{
+    background-position: -1500px, 0;
+  }
+}
+@keyframes bg-g3{
+  0%{
+    background-position: 0, 0);
+  }
+  100%{
+    background-position: -1500px, 0;
   }
 }
 
@@ -453,6 +484,7 @@ input.input100 {
   background-color: #fff;
   border-radius: 18px;
   margin: 0px 18px 25px 18px;
+  box-shadow: 0px 0px 5px #000000;
 }
 
 /*---------------------------------------------*/
