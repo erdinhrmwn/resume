@@ -37,11 +37,10 @@ Primary use:
 /*---------------------------------------------*/
 .container {max-width: 1200px;}
 
-
 /*//////////////////////////////////////////////////////////////////
 [ rs Modal ]*/
 
-body {padding-right: 0px !important;}
+body {padding-right: 0px !important;height: auto;}
 .modal {
   padding: 0px !important;
   z-index: 1160;
