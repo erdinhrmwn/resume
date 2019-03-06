@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<style type="text/css">
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        background: #1b1a1a !important;
+    }
+    
+    .angka {
+        text-align: center;
+    }
+    
+    a {
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <div class="row" style="height: 100%;">
+        <div class="col" style="text-align: center; height: 100%; float: none;">
+            <div class="card blue-grey darken-1" style="height: 100%;">
+                <div class="card-content white-text" style="height: 100%;">
+                    <div class="xcontainer">
+                        <span class="card-title">Calculator</span>
+                        <div class="file-field input-field">
+                            <a class="btn-floating waves-effect waves-light red" value="<" style="float: right;" onclick="angka(this.getAttribute('value'));"><i class="material-icons" style="transform: scaleX(-1);">trending_flat</i></a>
+                        </div>
+                        <div class="file-field input-field">
+                            <div class="file-path-wrapper">
+                                <input id="angka" type="text" class="validate" placeholder="Masukan angka" style="color: white">
+                                <label for="angka"></label>
+                            </div>
+                        </div>
+                        <div class="angka">
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="1" onclick="angka(this.getAttribute('value'));">1</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="2" onclick="angka(this.getAttribute('value'));">2</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="3" onclick="angka(this.getAttribute('value'));">3</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value=" + " onclick="angka(this.getAttribute('value'));"> + </a><br>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="4" onclick="angka(this.getAttribute('value'));">4</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="5" onclick="angka(this.getAttribute('value'));">5</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="6" onclick="angka(this.getAttribute('value'));">6</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value=" - " onclick="angka(this.getAttribute('value'));"> - </a><br>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="7" onclick="angka(this.getAttribute('value'));">7</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="8" onclick="angka(this.getAttribute('value'));">8</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="9" onclick="angka(this.getAttribute('value'));">9</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value=" * " onclick="angka(this.getAttribute('value'));"> * </a><br>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="C" onclick="angka(this.getAttribute('value'));">C</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="0" onclick="angka(this.getAttribute('value'));">0</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value="." onclick="angka(this.getAttribute('value'));">.</a>
+                            <a class="btn-floating btn-large waves-effect waves-light red" value=" / " onclick="angka(this.getAttribute('value'));"> / </a>
+                        </div>
+                        <div class="file-field input-field">
+                            <a class="btn-floating waves-effect waves-light red" value="=" style="float: right;" onclick="angka(this.getAttribute('value'));"><i class="material-icons" style="transform: scaleX(-1);">drag_handle</i></a>
+                        </div>
+                        <div class="file-field input-field">
+                            <div class="file-path-wrapper">
+                                <input type="text" id="hasil" class="validate" readonly placeholder="Hasil" style="color: white">
+                                <label for="hasil"></label>
+                            </div>
+                        </div>
+                        <span class="copyright">Erdin &copy; 2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function tambah(a) {
+            document.getElementById("angka").value += a;
+        }
+
+        function kurang(a) {
+            document.getElementById("angka").value += a;
+        }
+
+        function kali(a) {
+            document.getElementById("angka").value += a;
+        }
+
+        function bagi(a) {
+            document.getElementById("angka").value += a;
+        }
+
+        function angka(a) {
+            if (a == 'C') {
+                document.getElementById("angka").value = '';
+                document.getElementById("hasil").value = '';
+            } else if (a == '=') {
+                var b = eval(document.getElementById("angka").value);
+                document.getElementById("hasil").value = b;
+            } else if (a == '<') {
+                var b = document.getElementById("angka").value;
+                var resx = b.substr(0, b.length - 1);
+                document.getElementById("angka").value = resx;
+                var c = eval(b);
+                if (b == '') {
+                    document.getElementById("hasil").value = '';
+                } else {
+                    document.getElementById("hasil").value = c;
+                }
+            } else {
+                document.getElementById("angka").value += a;
+                var b = eval(document.getElementById("angka").value);
+                document.getElementById("hasil").value = b;
+            }
+        }
+    </script>
+</body>
+
+</html>

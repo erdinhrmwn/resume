@@ -36,6 +36,11 @@
 			</p>
 
 			<div class="flex-w flex-c cd100 p-b-82">
+				<div class="flex-col-c-m size2 how-countdown months">
+					<span class="l1-txt3 p-b-9" id="months"></span>
+					<span class="s1-txt1">Months</span>
+				</div>
+				
 				<div class="flex-col-c-m size2 how-countdown days">
 					<span class="l1-txt3 p-b-9" id="days"></span>
 					<span class="s1-txt1">Days</span>
@@ -135,18 +140,23 @@
     var distance = countDownDate - now;
     
     // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.5));
+    var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.5)) / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
+    document.getElementById("months").innerHTML = months;
     document.getElementById("days").innerHTML = days;
 	document.getElementById("hours").innerHTML = hours;
 	document.getElementById("minutes").innerHTML = minutes;
 	document.getElementById("seconds").innerHTML = seconds;
 
-    if( days == '0'){
+    if( months == '0'){
+    	var div = document.querySelectorAll(".months")[0];
+		div.parentNode.removeChild(div);
+    }else if( days == '0'){
     	var div = document.querySelectorAll(".days")[0];
 		div.parentNode.removeChild(div);
     }else if( hours == '0'){
