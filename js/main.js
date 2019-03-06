@@ -340,8 +340,8 @@ $(function(){
     if (animation) {
 
       var text = $('#home .typer-title'),
-          textOne = "i'm ui/ux designer",
-          textTwo = "i'm front-end developer",
+          textOne = "hello",
+          textTwo = "i'm full-stack developer",
           textThree = "i can create awesome stuff",
           textFour = "let's work together";
 
